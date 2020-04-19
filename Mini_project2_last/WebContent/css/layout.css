@@ -1,0 +1,49 @@
+@charset "UTF-8";
+
+body {
+	margin: auto;
+	padding: 0;
+	font-family: 나눔바른펜, sans-serif;
+	font-size: 11pt;
+	font-weight: bold;
+}
+
+/* header {
+	margin: auto;
+	width: 600px;
+	height: 60px;
+	color: #fff;
+    background: #ce4869 ;
+    padding: 10px;
+} */
+
+section {
+	margin: auto;
+	top: 60px;
+	min-height: 400px;
+}
+
+footer {
+	margin: auto;
+	padding: 20px;
+	width: 600px;
+	height: 35px;
+	color: #fff;
+	background: #45b5b8 ;
+    padding: 10px;
+}
+
+li {
+    float: left;
+    list-style: none;
+}
+li a {
+    display: block;
+    padding: 15px 0;
+    width: 120px;
+    text-align: center;
+    text-decoration: none;
+    background: #45b5b8;
+    color: #fff;
+}
+

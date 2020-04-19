@@ -1,0 +1,35 @@
+@charset "UTF-8";
+   #page {  
+       list-style:none;  
+       float:left;
+       display:inline; 
+   }  
+   #page li {  
+       display:inline;  
+       vertical-align:middle;
+       float:left;    
+   }  
+   #page li a {  
+       display:-moz-inline-stack;  /*FF2*/  
+       display:block;  
+       vertical-align:top;  
+       padding:4px;  
+       margin-right:3px;  
+       width:15px !important;  
+       color:#7ba329;  
+       font:bold 12px tahoma;  
+       border:1px solid #eee;  
+       text-align:center;  
+       text-decoration:none;  
+       width:26px;    /*IE 5.5*/  
+   }  
+   #page li a.now {  
+       color:#fff;  
+       background-color:#d9d026;  
+       border:1px solid #d9d026;  
+   }  
+   #page li a:hover, #page li a:focus {  
+       color:#fff;  
+       border:1px solid #d9d026;
+       background-color:#d9d026;  
+   } 

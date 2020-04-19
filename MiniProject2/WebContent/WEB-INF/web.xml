@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
+  <display-name>Mission-Web-MVC01</display-name>
+  <!-- 어떤 url이든 대표로 처리하는 서블릿, FrontController -->
+  <!-- .do로 끝나는 건 무조건 FrontController가 받겠다 -->
+  <servlet>
+  	<servlet-name>frontController</servlet-name>
+  	<servlet-class>kr.co.bit.FrontController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>frontController</servlet-name>
+  	<url-pattern>*.do</url-pattern> 
+  </servlet-mapping>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+</web-app>

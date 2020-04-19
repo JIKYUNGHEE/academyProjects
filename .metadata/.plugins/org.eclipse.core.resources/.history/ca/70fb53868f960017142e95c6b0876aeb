@@ -1,0 +1,72 @@
+package kr.co.bit.controller;
+
+import java.util.List;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import kr.co.bit.board.dao.BoardDAO;
+import kr.co.bit.board.vo.BoardVO;
+
+public class FreeBoardListController implements Controller {
+
+	@Override
+	public String handleRequest(HttpServletRequest request,
+			HttpServletResponse response) throws Exception {
+		
+		request.setCharacterEncoding("utf-8");
+		
+		// �럹�씠吏�
+		int currentPage;// �쁽�옱 �럹�씠吏� 踰덊샇
+		String num = request.getParameter("pageNum");
+		
+		if (num!=null  && !num.trim().equals("")) {
+			currentPage = Integer.parseInt(num);
+		}else {
+			num = "1";
+			currentPage=1;
+		}
+		
+		int pageSize = 1;	// �븳 �럹�씠吏��뿉 異쒕젰�븷 寃뚯떆臾� �닔-->吏��젙�븯湲�
+		// �빐�떦 �럹�씠吏��뿉�꽌 �떆�옉�븷 �젅肄붾뱶 / 留덉�留� �젅肄붾뱶
+		int startRow = (currentPage - 1) * pageSize + 1;
+		int endRow = currentPage * pageSize;
+		
+		int pageCount = 0;
+		
+		BoardDAO dao = new BoardDAO();
+		int count = dao.getCount();
+		
+		List<BoardVO> list = null;
+		
+		if (count > 0) {
+			// getList()硫붿꽌�뱶 �샇異� / �빐�떦 �젅肄붾뱶 諛섑솚
+			list = dao.getList(startRow, endRow);
+			pageCount = count / pageSize + ((count % pageSize == 0) ? 0 : 1);
+		}
+		
+		int pageBlock = 5;// pageBlock �닔--> �닔�젙�빐
+		int startPage = ((currentPage - 1) / pageBlock) * pageBlock + 1;// page �떆�옉踰덊샇 諛� �걹 踰덊샇
+		int endPage = startPage + pageBlock - 1;
+		if (endPage > pageCount) {
+			endPage = pageCount;
+		}
+		
+		/*List<BoardVO> list = dao.selectAllBoard();*/
+		
+		request.setAttribute("count", count);
+		request.setAttribute("currentPage", currentPage);
+		request.setAttribute("pageCount", pageCount);
+		request.setAttribute("pageBlock", pageBlock);
+		request.setAttribute("startPage", startPage);
+		request.setAttribute("endPage", endPage);
+        request.setAttribute("list", list);
+        
+		System.out.println("list :"+list);
+		return "/freeBoard/freeBoardList.jsp";
+	}
+}
+
+
+
+

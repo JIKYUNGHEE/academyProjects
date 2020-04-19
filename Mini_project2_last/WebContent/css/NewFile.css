@@ -1,0 +1,43 @@
+@charset "UTF-8";
+body{
+	background: url("/Mini_project2/img/bg.jpg") no-repeat center center fixed;
+	background-position:0px 0px;
+	-webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+#div1{
+	margin-top:20%;
+	text-align: center;
+}
+#p1{
+	font-family: 'Fredericka the Great';
+	color: white; 
+	font-size: 100pt;
+	margin-bottom: 0px;
+}
+#p2{
+	font-family:'Adobe Thai';
+	margin-top:0px;
+	margin-bottom:0px;
+	color: white; 
+	font-size: 30pt;
+}
+#btn {
+	font-family:'Adobe Thai';
+	margin-top:0px;
+	width:100px;
+	height:40px;
+	font-size:30px;
+    color: #fff;
+    border: none;
+    border-radius: 0;
+    background-color: rgba(0, 0, 0, .4);
+}
+	
+#btn:hover,
+#btn:focus,
+#btn:active {
+    background-color: rgba(0, 0, 0, .7);
+}

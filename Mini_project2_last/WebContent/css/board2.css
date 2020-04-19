@@ -1,0 +1,62 @@
+@charset "UTF-8";
+
+body {
+	margin: auto;
+	padding: 0;
+}
+
+img {
+	width: 130px;
+	padding-bottom: 10px;
+}
+
+table.type11 {
+	max-width: 800px;
+	font-family: 나눔바른펜, sans-serif;
+	font-size: 11pt;
+	font-weight: bold;
+    border-collapse: separate;
+    border-spacing: 1px;
+    text-align: center;
+    line-height: 1.5;
+    /* margin: 20px 10px; */
+    margin: auto;
+}
+table.type11 th {
+    padding: 10px;
+    font-weight: bold;
+    vertical-align: top;
+    color: #fff;
+    background: #9282CD ;
+    text-align: center;
+}
+table.type11 td {
+    width: 100px;
+    padding: 10px;
+    vertical-align: top;
+    border-bottom: 1px solid #ccc;
+    background: #eee;
+    text-align: center;
+	font-size: 15px;
+}
+
+table, tr, td, th {
+	border-collapse: collapse;
+}
+
+tr.even {
+	background-color: palevioletred;
+}
+
+tr:hover {
+	background-color: #8080c0;
+}
+
+td a:link, td a:visited {
+	color : indigo;
+	text-decoration: none;
+}
+
+td a:hover {
+	text-decoration: underline;
+}

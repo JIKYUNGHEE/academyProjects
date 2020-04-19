@@ -1,0 +1,100 @@
+@CHARSET "UTF-8";
+
+/* NORMALIZE (노말라이즈 : 초기화) */
+body {font-size:12px}
+ul, li {list-style:none;}
+ul,li,p,strong,em,a,img,span {margin:0;padding:0;}
+a {text-decoration:none}
+em {text-decoration:none;font-style:normal;}
+
+
+
+/******************* ( board-card-list : 게시판 CSS ) **************************/
+.board-card-list {
+    box-sizing: border-box;
+    margin-left: 400px;
+    margin-right: 400px;
+}
+.board-card-list:after {display:block;content:"";clear:both}
+
+/* 카드박스(LI) */
+.board-card-list li {
+    box-sizing: border-box; /* padding, border 등을 width 에서 빼줄필요 없게해주는거임. */
+    float:left;
+    
+    width:calc(25% - 20px); /* calc : calculation 약자야, 카드가 한 행에 4개만 나오게 조절해서 25퍼 기준인데, 우측 마진 15PX을 빼준거야 :) */
+    
+    margin-left:20px;margin-bottom:15px;
+    padding:15px;
+    
+    border:1px solid #ccc;
+    border-radius:3px;
+    background-color:#fff;
+    
+}
+/* nth-child(4n+1)  <- 4의배수 차일드 + 1번째 차일드*/
+.board-card-list li:nth-child(4n+1) {margin-left:0;}
+.board-card-list li a {
+    color:#333;
+}
+.board-card-list li a:hover .card-para {text-decoration:underline}
+
+/* ( 아이디 ) */
+.board-card-list .card-id {
+    display:block;
+    margin-bottom:5px;
+    box-sizing:border-box;
+    position:relative;
+    padding-left:30px;
+    font-size:12px; font-weight:700;
+    line-height:23px;
+    color:#000;
+    
+    /* 넘치는 텍스트 말줄임표 처리 */
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.board-card-list .card-id:before {
+    display:block;content:"";
+    position:absolute;left:0;top:0;
+    width:20px;height:20px;
+    border-radius:50px;
+    border:1px solid #ccc;
+    background:url('https://www.elueslocales.fr/wp-content/uploads/2016/11/noavatar.png') 0 0 no-repeat;
+    background-size:contain;
+}
+/* ( 이미지 ) */
+.board-card-list .card-img {
+    display:block;overflow:hidden;
+    min-height:200px!important;
+    margin:0 auto 10px;
+    border:1px solid #ccc;
+    background-color:#f9f9f9;
+    text-align: center;
+}
+.board-card-list .card-img img {
+    max-width:100%;
+    
+}
+/* ( 제목  ) */
+.board-card-list .card-tit {
+    display:block;
+    margin-bottom:7px;
+    font-weight:700;font-size:14px;
+    
+    
+    /* 넘치는 텍스트 말줄임표 처리 */
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.card-tit {
+	text-align: center;
+}
+/* ( 제목 하단 리뷰내용 ) */
+.board-card-list .card-para {
+    overflow: hidden;
+    height: 50px;
+    color:#666
+}
